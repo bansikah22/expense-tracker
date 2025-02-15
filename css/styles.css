@@ -1,0 +1,357 @@
+:root {
+    --primary-color: #6200ea;
+    --secondary-color: #03dac6;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --card-background: #ffffff;
+    --income-color: #4caf50;
+    --expense-color: #f44336;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.balance-card, .summary-cards, .transaction-section, .transactions-list, .charts, .savings-calculator, .tips {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.balance-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.balance-card p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.card {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    max-width: 300px;
+    min-width: 200px;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.income p {
+    color: var(--income-color);
+}
+
+.expenses p {
+    color: var(--expense-color);
+}
+
+.transaction-section, .transactions-list, .charts, .savings-calculator, .tips {
+    margin-bottom: 20px;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #5a00b0;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Add styles for the transaction buttons */
+.transactions-list button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.transactions-list button:hover {
+    background-color: #02b89b;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#transactions {
+    list-style-type: none;
+}
+
+#transactions li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+#transactions li.income {
+    border-left: 4px solid var(--income-color);
+}
+
+#transactions li.expense {
+    border-left: 4px solid var(--expense-color);
+}
+
+.chart-container {
+    height: 300px;
+}
+
+#savings-result {
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#tip-container {
+    font-style: italic;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.filter-container {
+    margin-bottom: 15px;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    left: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ddd;
+}
+
+/* Icon styles */
+.fas {
+    margin-right: 5px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    #transactions li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #transactions li span {
+        margin-bottom: 5px;
+    }
+
+    .transaction-button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 10px;
+    }
+}
+
+/* New styles for added features */
+#month-filter {
+    width: 100%;
+    max-width: 200px;
+}
+
+#custom-tip {
+    width: 100%;
+    resize: vertical;
+}
+
+#custom-tip-form button {
+    margin-top: 10px;
+}
+
+.transactions-list h2,
+.charts h2,
+.savings-calculator h2,
+.tips h2 {
+    display: flex;
+    align-items: center;
+}
+
+.transactions-list h2 i,
+.charts h2 i,
+.savings-calculator h2 i,
+.tips h2 i {
+    margin-right: 10px;
+}
+
+/* Transaction text styles */
+#transactions li span {
+    flex: 1;
+    color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#transactions li p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    overflow-wrap: break-word;
+}
+
+.transaction-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--secondary-color);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.transaction-button:hover {
+    background-color: #02b89b;
+}
+
+/* Ensure Recommended Savings card fits well */
+.recommended-savings {
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+}
